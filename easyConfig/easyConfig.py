@@ -19,7 +19,7 @@ def load_seq_config(config_dir, config_name):
 def load_cli_config():
     return OmegaConf.from_cli()
 
-def setup_config(config_dir='config', config_name='config'):
+def setup_config(config_dir='config', config_name='config', change_path = True):
     cli_cf = load_cli_config()
     outputs = cli_cf.get('outputs', 'outputs')
     config_dir = cli_cf.get('config_dir', config_dir)
@@ -29,8 +29,9 @@ def setup_config(config_dir='config', config_name='config'):
     yaml_cf = load_seq_config(config_dir, config_name)
     config = OmegaConf.merge(yaml_cf.copy(), cli_cf)
 
-    os.makedirs(outputs)
-    os.chdir(outputs)
+    if change_path == True:
+        os.makedirs(outputs)
+        os.chdir(outputs)
     return config
 
 
