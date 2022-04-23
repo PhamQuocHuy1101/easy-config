@@ -20,7 +20,7 @@ setuptools.setup(
         "License :: OSI Approved :: Apache License",
         "Operating System :: OS Independent",
     ],
-    packages=setuptools.find_packages(),
+    packages=['easyConfig'],
     install_required = [
         'omegaconf==2.1.2'
     ],
