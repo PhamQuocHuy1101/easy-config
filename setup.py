@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="eas-config",
+    name="easyConfig",
     version="0.0.1",
     author="PhamQuocHuy1101",
     author_email="phuy099@gmail.com",
