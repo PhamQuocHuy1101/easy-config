@@ -21,7 +21,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     packages=['easyConfig'],
-    install_required = [
+    install_requires = [
         'omegaconf==2.1.2'
     ],
     python_requires=">=3.6",
