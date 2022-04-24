@@ -24,7 +24,7 @@ def setup_config(config_dir='config', config_name='config', change_path = True):
     outputs = cli_cf.get('outputs', 'outputs')
     config_dir = cli_cf.get('config_dir', config_dir)
     config_name = cli_cf.get('config_name', config_name)
-    assert os.path.exists(os.path.join(config_dir, config_name)), 'config file does not exist'
+    assert os.path.exists(os.path.join(config_dir, config_name + '.yaml')), 'config file does not exist'
 
     yaml_cf = load_seq_config(config_dir, config_name)
     config = OmegaConf.merge(yaml_cf.copy(), cli_cf)
