@@ -30,7 +30,7 @@ def setup_config(config_dir='config', config_name='config', change_path = True):
     config = OmegaConf.merge(yaml_cf.copy(), cli_cf)
 
     if change_path == True:
-        os.makedirs(outputs)
+        os.makedirs(outputs, exist_ok=True)
         os.chdir(outputs)
     return config
 
